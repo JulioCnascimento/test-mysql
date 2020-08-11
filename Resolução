@@ -1,0 +1,15 @@
+SELECT 
+    c.id_cliente,
+    c.nome,
+    c.sobrenome,
+    ca.cor,
+    b.nome,
+    car.modelo
+    FROM
+    cliente c
+INNER JOIN casa ca 
+	ON c.id_cliente = ca.fk_cliente
+LEFT JOIN carro car 
+	ON c.id_cliente = car.fk_cliente
+INNER JOIN bairro b 
+	ON ca.fk_bairro = b.id_bairro;
